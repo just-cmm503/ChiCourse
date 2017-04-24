@@ -31,7 +31,7 @@
         exit;
     }
 */
-
+$conn = new mysqli("localhost:52543", "root2", "", "localdb");
 
 function getRecords($conn,$Query,$valuesCount,$val1, $val2=null)
 {

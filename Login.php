@@ -8,8 +8,6 @@
 
 include "dbConnect.php";
 
-$conn = new mysqli("localhost:52543", "root2", "", "localdb");
-
 $qry="select passid from pressfoward WHERE username= ? AND paswd = ?";
 $myID=getRecords($conn, $qry,2,$_POST["username"], $_POST["password"]);
 
