@@ -8,7 +8,7 @@
 
 include "config/dbConnect.php";
 
-$qry="select passid from pressfoward WHERE username= ? AND paswd = ?";
+$qry="select aa.passid,bb.name,bb.surname from pressfoward aa users bb WHERE (aa.username= ? AND aa.paswd = ?) AND aa.passid=bb.uid";
 $myID=getRecords($conn, $qry,2,$_POST["username"], $_POST["password"]);
 
 $myID=4; // for login

@@ -72,4 +72,47 @@ function getRecords($conn,$Query,$valuesCount,$val1, $val2=null)
 }
 
 
+function setRecords($conn,$Query,$valuesCount,$val1, $val2=null, $val3=null)
+{
+    if (!$conn) {
+        echo "Error: Unable to connect to MySQL." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_error() . PHP_EOL;
+        exit;
+    }
+    $stmt = $conn->prepare($Query);
+    
+    /* bind parameters for markers */
+    try {
+        switch ($valuesCount) {
+            case 0:
+                break;
+            case 1:
+                $stmt->bind_param("s", $val1);
+                $valuesCount=0;
+                break;
+            case 2:
+                $stmt->bind_param("ss", $val1, $val2);
+                $valuesCount=0;
+                break;
+            case 3:
+                $stmt->bind_param("sss", $val1, $val2,val3);
+                $valuesCount=0;
+                break;
+    
+    
+        }
+    }
+    catch (mysqli_sql_exception $e){return e;}
+    
+    /* execute query */
+    $stmt->execute();
+    $result=null;
+    /* bind result variables */
+    //$stmt->bind_result($result);
+    
+    /* fetch value */
+    $stmt->fetch();
+    return $result;
+}
 ?>
