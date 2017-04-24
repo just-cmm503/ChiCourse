@@ -6,7 +6,7 @@
  * Time: 08:03
  */
 
-include "dbConnect.php";
+include "config/dbConnect.php";
 
 $qry="select passid from pressfoward WHERE username= ? AND paswd = ?";
 $myID=getRecords($conn, $qry,2,$_POST["username"], $_POST["password"]);
