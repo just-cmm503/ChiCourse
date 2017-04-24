@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <title> PEER ASSESSMENT
         - Login </title>
-    <link type="text/css" rel="stylesheet" href="asset/peer.css"/>
+    <link rel="stylesheet" href="asset/peer.css"/>
 </head>
 <body>
 <h1> PEER ASSESSMENT </h1>
