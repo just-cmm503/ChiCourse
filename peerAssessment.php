@@ -21,13 +21,11 @@
     
     <div class="centHead">Peer Review Form</div>
     <div class="lInfo" style="height: 200px">
-        Group Name/Number <p>
-        <p></p>
-        Project
+        Group Name/Number: <?php print $gName."/".$myGID; ?><p>
         <p></p>
         <p></p>
         <p></p>
-        Name and Number of student completing form
+        Name and Number of student completing form: <?php print $sName.", ".$sSname ?>
     </div>
     <table class="table table-border">
         <thead>

@@ -27,13 +27,13 @@
                 <table>
                     <tr>
                         <td> <label for="username">Username:</label><br></td>
-                        <td> <input type="text" name="username" value="1" required /><br> </td>
+                        <td> <input type="text" name="username" value="user" required /><br> </td>
                     </tr>
                     
                     
                     <tr>
                         <td> <label for="password">Password:</label><br> </td>
-                        <td> <input type="password" name="password" value="1" required> </td>
+                        <td> <input type="password" name="password" value="mouse1" required> </td>
                     
                     </tr>
                     <div id="submitbutton">
