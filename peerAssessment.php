@@ -41,9 +41,11 @@
         $s = 0;
         while ($s < $gCount) {
             $s++;
+            $sNval="''";
+            if ($s==1){$sNval="''".$sName." ".$sSname."''";}
             print "
 <tr>
-        <td><input type='text' name='sName[]' id='sName'   ></td>
+        <td><input type='text' name='sName[]' id='sName '  value=$sNval ></td>
         <td><input type='text' name='sComent[]' id='sComent'   ></td>
         <td><input type='text' name='sMark[]' id='sMark'   ></td>
     </tr>

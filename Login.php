@@ -18,12 +18,17 @@ if($myID)
     //$conn = new mysqli("localhost:52543", "root2", "", "localdb");
     $qry="select gid from results WHERE uid = ?";
     $myGID=getRecords($conn, $qry,1,$myID);
-    $qry="select count(gid) from results WHERE gid=?";
+    
+    //$qry="select count(gid) from results WHERE gid=?";
+    $qry="select uid from results WHERE gid=?";
     $gCount=getRecords($conn, $qry, 1, $myGID);
+    
     $qry="select name from users WHERE uid=?";
     $sName=getRecords($conn, $qry, 1, $myID);
+    
     $qry="select surname from users WHERE uid=?";
     $sSname=getRecords($conn, $qry, 1, $myID);
+    
     $qry="select group_name from groups WHERE gid=?";
     $gName=getRecords($conn, $qry, 1, $myGID);
         include "peerAssessment.php";

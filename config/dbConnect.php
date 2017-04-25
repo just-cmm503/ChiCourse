@@ -5,7 +5,7 @@
  * Date: 08/03/2017
  * Time: 11:35
  */
-//*
+/*
     $connectstr_dbhost = '';//$host;
     $connectstr_dbname = '';//$dbName;
     $connectstr_dbusername = '';//$uname;
@@ -31,8 +31,9 @@
         exit;
     }
 /**/
-//$conn = new mysqli("localhost:52543", "root2", "", "localdb");
-
+$conn = new mysqli("localhost:52543", "root2", "", "localdb");
+$stmt = $conn->prepare($Query);
+$stmt->bind_result($result);
 function getRecords($conn,$Query,$valuesCount,$val1, $val2=null)
 {
     if (!$conn) {
