@@ -5,7 +5,7 @@
  * Date: 08/03/2017
  * Time: 11:35
  */
-/*
+//*
     $connectstr_dbhost = '';//$host;
     $connectstr_dbname = '';//$dbName;
     $connectstr_dbusername = '';//$uname;
@@ -23,15 +23,15 @@
         $connectstr_dbpassword = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
         echo $connectstr_dbpassword." g4 <br> \r\n";;
     }
-    $link = mysqli_connect($connectstr_dbhost, $connectstr_dbusername, $connectstr_dbpassword, $connectstr_dbname);
-    if (!$link) {
+    $conn = new mysqli($connectstr_dbhost, $connectstr_dbusername, $connectstr_dbpassword, $connectstr_dbname);
+    if (!$conn) {
         echo "Error: Unable to connect to MySQL." . PHP_EOL;
-        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        echo "Debugging errno: " . mysqli_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_error() . PHP_EOL;
         exit;
     }
 /**/
-$conn = new mysqli("localhost:52543", "root2", "", "localdb");
+//$conn = new mysqli("localhost:52543", "root2", "", "localdb");
 
 function getRecords($conn,$Query,$valuesCount,$val1, $val2=null)
 {
